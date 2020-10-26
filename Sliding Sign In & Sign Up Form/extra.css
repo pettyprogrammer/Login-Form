@@ -1,0 +1,243 @@
+/* basic css */
+* {
+
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	background-image: url("bg.png");
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+input[type="radio"]{
+	display: none;
+} 
+.form_container{
+	width: 800px;
+	border-radius: 20px;
+	position: relative;
+	display: flex;
+	background-color: #fff;
+	position: relative;
+}
+.form_container::before,
+.form_container::after{
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 80px;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.3);
+	transform: skewY(-5deg);
+	filter: blur(5px);
+	z-index: -1;
+}
+.form_container::after{
+	right: 0 ;
+	left: 50%;
+	transform: skewY(5deg);
+}
+.left_content{
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-image: url("sub.jpg");
+	background-size: cover;
+	padding: 50px;
+	border-radius: 20px 0 0 20px;
+
+}
+.left_content .left_title{
+font-weight: 600;
+color:#fff;
+margin-top: 20px;
+}
+.logo img{
+	width: 50px;
+	margin-top: 30px;
+}
+.logo .name h2{
+	font-family: Footlight MT Light;
+	letter-spacing: 1.5px;
+	color:#fff;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.logo .name small{
+	font-size: 10px;
+	letter-spacing: 1.5px;
+	color:#fff;
+	font-family: arial;
+}
+.left_content .btn{
+	display: flex;
+	flex-direction: column;
+}
+.left_content .btn label{
+	display: block;
+	width: 250px;
+	height: 35px;
+	line-height: 35px;
+	background-color: #fff;
+	color:#0199E4;
+	border-radius: 50px;
+	font-family: arial;
+	font-weight: 600;
+	margin-top: 25px;
+	transition: .1s ease-in;
+}
+.left_content .btn label:last-child{
+	background-image: linear-gradient(to right,#04D4F0,#0199E4);
+	border: 1px solid #fff;
+	color:#fff;
+}
+#up:checked + .left_content .btn label:last-child{
+	background-image: linear-gradient(to right,#fff,#fff);
+	color:#0199E4;
+	border:none;
+}
+#up:checked + .left_content .btn label:first-child{
+	background-image: linear-gradient(to right,#04D4F0,#0199E4);
+	color:#fff;
+	border: 1px solid #fff;
+}
+
+.right_content{
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 0 20px 20px 0;
+	padding: 50px;
+	position: relative;
+}
+.form .title{
+	color:#04D4F0;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.form_input{
+	position: relative;
+}
+.form_input input{
+	outline: none;
+	border:none;
+	border-bottom: 1px solid #000;
+	width: 300px;
+	height: 35px;
+	padding: 0 15px;
+	font-size: 18px;
+	font-family: "Poppins" sans-serif;
+	margin-top: 25px;
+}
+.form_input input:focus{
+	border-bottom: 1px solid #04D4F0;
+}
+.form_input i{
+	position: absolute;
+	right: 0;
+	bottom: 8px;
+}
+::placeholder{
+	font-size: 10px;
+}
+.form_tool{
+	width: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+.form_tool small{
+	display: flex;
+	align-items: center;
+	font-size: 10px;
+	font-family: arial;
+	letter-spacing: 1px;
+}
+.form_tool small input{
+	margin-right: 5px;
+}
+.form_tool a{
+	font-size: 13px;
+}
+.form_btn{
+	width: 300px;
+	height: 40px;
+	background-image:  linear-gradient(to right,#04D4F0,#0199E4);
+	border-radius: 40px;
+	line-height: 40px;
+	font-family: arial;
+	font-weight: 600;
+	margin-top: 20px;
+}
+.form_btn a{
+	color:#fff;
+}
+.social_icon{
+	margin-top: 15px;
+}
+.social_icon small{
+	font-weight: 500px;
+	color:gray;
+}
+.social_icon .icon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.social_icon .icon li{
+	margin-top: 8px;
+	margin-left: 20px;
+}
+.social_icon .icon li a{
+	font-size: 20px;
+	color:gray;
+}
+.social_icon .icon li a:hover .fa-facebook{
+	color:#3B5998;
+}
+.social_icon .icon li a:hover .fa-twitter{
+	color:#1DA1F2;
+}
+.social_icon .icon li a:hover .fa-instagram{
+	color:#DD2A7B;
+}
+.social_icon .icon li a:hover .fa-envelope-open-text{
+	color:#D44638;
+}
+
+.sign_up_container .form_btn{
+	margin-top: 35px;
+}
+.sign_up_container,
+.sign_in_container{
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	transition: .2s ease-in;
+}
+#up:checked ~ .right_content .sign_up_container{
+	opacity: 1;
+	visibility:visible;
+	z-index: 1;
+}
+#in:checked ~ .right_content .sign_in_container{
+	opacity: 1;
+	visibility:visible;
+	z-index: 1;
+}
